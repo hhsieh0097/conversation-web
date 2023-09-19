@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <section class="web-container">
+        <section id="info-section" class="info-container">
+            <div class="information">
+                <div class="info-head">
+                    <p> {{preliminary_info}} </p>
+                </div>
+                <div class="info-text">
+                    <p>
+                        {{preliminary_info_first}}
+                        <br><br>
+                        {{preliminary_info_second}}
+                        <br><br>
+                        {{preliminary_info_end}}
+                    </p>
+
+                    <button class="select-button" id="accept" onclick="accept()">Accept</button>
+                </div>
+            </div>
+
+            <div class="portrait-container">
+                <div class="info-text">
+                    <p> {{portrait_info}} </p>
+                </div>
+
+                <div class="ad-contrainer">
+                    <div class="age-container">
+                        <input id="age-holder" type="number" placeholder="Age (e.g. 25)" class="age-input" autocomplete="off" required>
+                    </div>
+
+                    <div class="gender-container">
+                        <input type="radio" id="radio-male" name="genders" checked/>
+                        <label class="gender" for="radio-male"> Male </label>
+                        <input type="radio" id="radio-female" name="genders" />
+                        <label class="gender" for="radio-female"> Female </label>
+                        <span class="glider"></span>
+                    </div>
+                </div>
+
+                <button class="select-button" id="start" onclick="start()">Start</button>
+            </div>
+        </section>
+
+
+        <section class="chat-container">
+            <div class="chat-log"></div>
+
+            <form class='chat-input-area'>
+                <input id="input-holder" type="text" placeholder="{{ placeholder_text }}" class="chat-input-area_input" autocomplete="off">
+                <button id="submit-button" type="submit" class="chat-input-area_submit-button" disabled></button>
+            </form>
+        </section>
+    </section>
+
+    <script id="js-script" type="module" src="/static/script.js" data-text="{{ greeting_info }}" data-warning="{{ warning_info }}"></script>
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
